@@ -8,3 +8,27 @@
 Во втором также необходимо предусмотреть условие, при котором повторение элементов списка будет прекращено.
 """
 
+
+import sys
+import itertools as it
+two_scripts, start_int = sys.argv
+
+# а) итератор, генерирующий целые числа, начиная с указанного через itertools.count
+count_list =[]
+for cnt in it.count(int(start_int)):
+    if cnt > 20:
+        break
+    else:
+        count_list.append(cnt)
+print("Список, полученный через itertools.count: ", count_list)
+# а) итератор, повторяющий элементы некоторого списка, определенного заранее
+
+cycle_list = []
+count = 0
+for item in it.cycle(count_list):
+    if count > 9:
+        break
+    cycle_list.append(item)
+    count += 1
+print("Список, полученный через itertools.cycle: ", cycle_list)
+

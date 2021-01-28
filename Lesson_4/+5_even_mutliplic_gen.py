@@ -5,17 +5,18 @@
 Подсказка: использовать функцию reduce().
 """
 multiple = 1
-for el in [el for el in range(100, 1000) if el % 2 == 0]:
+for el in [el for el in range(100, 1001) if el % 2 == 0]:
     multiple = multiple * el
 print("Произведение всех элементов:", multiple)
 
 
-
+# Менее компактная реализация
 # multiple = 1
-# new_script = [el for el in range(100, 1000) if el % 2 == 0]
+# new_script = [el for el in range(100, 1001) if el % 2 == 0]
 # print(new_script)
 # for el in new_script:
 #     multiple = multiple * el
 # print(multiple)
 # print(len(str(multiple)))
+# print(len(new_script))
 

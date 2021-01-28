@@ -6,7 +6,7 @@
 """
 
 start_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
-end_list = [el for el in start_list if el > start_list[-1]]
+end_list = [el for i, el in enumerate(start_list) if start_list[i] > start_list[i-1] and i > 0]
 
-print(f"Начальный список: {start_list} ")
-print(f"Конечный список: {end_list} ")
+print(f"Начальный список: {start_list}")
+print(f"Конечный список: {end_list}")

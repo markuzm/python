@@ -6,3 +6,17 @@
 только первые n чисел, начиная с 1! и до n!.
 Подсказка: факториал числа n — произведение чисел от 1 до n. Например, факториал четырёх 4! = 1 * 2 * 3 * 4 = 24.
 """
+n = int(input("Введите n: "))
+
+
+def fact(arg):
+    cur_fact = 1
+    count = 1
+    while count < arg:
+        cur_fact = cur_fact * count
+        count += 1
+        yield cur_fact
+
+
+for item in fact(n):
+    print(item)

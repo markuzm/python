@@ -5,19 +5,6 @@
 """
 import sys
 
-script, work_hours, hour_price, prize = sys.argv
-
-# print("Имя скрипта: ", script_name)
-# print("Параметр 1: ", first_param)
-# print("Параметр 2: ", second_param)
-# print("Параметр 3: ", third_param)
-
-
+motivation, work_hours, hour_price, prize = sys.argv
 print(sys.argv)
-
-
-def motivation_calc(work_hours, hour_price, prize):
-    return (work_hours * hour_price) + prize
-
-
-print(motivation_calc(sys.argv))
+print((int(work_hours) * int(hour_price)) + int(prize))

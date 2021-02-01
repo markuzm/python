@@ -17,39 +17,25 @@ import json
 my_file = open("my_file_7.txt", "r", encoding='utf-8')
 content = my_file.readlines()
 my_file.close()
-print(content)      # Выводим данные из файла
+print(content)  # Выводим данные из файла
 list_for_dict = list()
+
 for el in content:  # Подготавливаем данные для переноса в словарь
     el = (el.strip()).split(' ')
-    print(el)
     list_for_dict.append(el)
 print(list_for_dict)
-my_dict = dict(list_for_dict)    # Превращаем список в словарь
-emp_list = []    # Список с фамилиями тех сотрудников, у которых зп менее 20 тыс
-print(f"Список фамилий сотрудников с зп менее 20 тыс: {emp_list}")
 
-# summa = 0
-# count = 0
-# for key, value in my_dict.items():  # Работаем со словарем
-#     summa = summa + int(value)
-#     count += 1
-#     if int(value) < 20000:
-#         emp_list.append(key)
-#
-# print(f"Средняя зп коллектива: {summa/count}")
+summa = 0
+count = 0
+for i in range(len(list_for_dict)):  # Превращаем список в словарь
+    for j in range(len(list_for_dict[i])):
+        my_dict = {list_for_dict[i][0]: int(list_for_dict[i][2]) - int(list_for_dict[i][3]) for i in range(5)}
+    count += 1
+    summa += (int(list_for_dict[i][2]) - int(list_for_dict[i][3]))
+print('Словарь:', my_dict)
 
+my_list = [my_dict, {'average_profit': int(summa / count)}]  # Создаем список из словарей
+print(my_list)
 
-
-# data = {
-#     "income": {
-#         "salary": 50000,
-#         "bonus": 20000
-#     }
-# }
-#
-# with open("my_file_7.json", "w") as write_f:
-#     json.dump(data, write_f)
-#
-# json_str = json.dumps(data)
-# print(json_str)
-# print(type(json_str))
+with open("my_file_7.json", "w") as write_f:  # Выгружаем список в json
+    json.dump(my_list, write_f)

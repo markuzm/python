@@ -8,3 +8,18 @@
 Задачу можно усложнить, реализовав проверку порядка режимов, и при его нарушении выводить соответствующее сообщение
  и завершать скрипт.
 """
+import time
+
+class TrafficLight:
+    __color = 'красный'
+
+    def running(self, user_count):
+        count = 0
+        while count < user_count:
+            count += 1
+            time.sleep(3)
+            return print('hjh')
+
+a = TrafficLight
+print(a)
+print(a.running(0, 2))

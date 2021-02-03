@@ -7,3 +7,22 @@
 Создайте экземпляры классов, передайте значения атрибутов. Выполните доступ к атрибутам, выведите результат.
 Выполните вызов методов и также покажите результат.
 """
+
+class Car:
+    speed = 0
+    color = ''
+    name = ''
+    is_police = false
+
+    def go(self):
+
+    def show_speed(self):
+
+    def stop(self):
+
+    def turn(self):
+
+class TownCar(Car):
+class SportCar(Car):
+class WorkCar(Car):
+class PoliceCar(Car):

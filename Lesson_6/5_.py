@@ -5,3 +5,17 @@
    Для каждого из классов методы должен выводить уникальное сообщение. Создать экземпляры классов и проверить,
     что выведет описанный метод для каждого экземпляра.
 """
+
+class Stationery:
+    title = ''
+
+    def draw(self):
+        return print("Запуск отрисовки")
+
+class Pen(Stationery):
+    def draw(self):
+        return print("Запуск отрисовки ручки")
+
+class Pensil(Stationery):
+    def draw(self):
+        return print("Запуск отрисовки карандаша")

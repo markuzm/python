@@ -104,3 +104,10 @@ xxx = SuperClass(1,2,3, {'wage': 1000, 'bonus': 200})
 # Полиморфизм
 
 # абстракция -- ??
+
+# def __init__(self, length, width):
+#     self.length = length
+#     self.width = width
+
+# def __str__(self):
+#     return f'{self.length} ({self.width})'

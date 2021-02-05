@@ -9,29 +9,12 @@
 
 
 class Road:
-    # атрибуты класса
+    _length = int(input("Введите длину полотна дороги, м: "))
+    _width = int(input("Введите ширину полотна дороги, м: "))
 
-    # length = 5
-    # width = 25
+    def asphalt_mass_calc(self, h=5, kg=25):
+        mass = self._length * self._width * h * kg
+        print(f'Вес асфальта, необходимый для дороги длиной {self._length}м и шириной {self._width}м: {mass} т')
 
-    # def __init__(self, length, width):
-    #     self.length = length
-    #     self.width = width
-
-    # def __str__(self):
-    #     return f'{self.length} ({self.width})'
-
-    def asphalp_mass_calc(self, length, width, h = 5, kg = 25):
-        self.mass = length * width * h * kg
-        return f'{self.mass}'
-
-road1 = Road()
-print(road1)
-print(type(road1))
-print(road1.asphalp_mass_calc(20, 5000))
-
-# road1 = road(2,5)
-# a = road1.asphalp_mass_calc(20, 5000)
-# print(road1)
-# print(a)
-
+my_road = Road()
+my_road.asphalt_mass_calc()

@@ -10,12 +10,25 @@ class Stationery:
     title = ''
 
     def draw(self):
-        return print("Запуск отрисовки")
+        print("Запуск отрисовки.")
 
 class Pen(Stationery):
     def draw(self):
-        return print("Запуск отрисовки ручки")
+        print(f"Запуск отрисовки {self.title}и")
 
 class Pensil(Stationery):
     def draw(self):
-        return print("Запуск отрисовки карандаша")
+        print(f"Запуск отрисовки {self.title}а")
+
+class Handle(Stationery):
+    def draw(self):
+        print(f"Запуск отрисовки {self.title}а")
+
+
+my_pen = Pen()
+my_pen.title = 'ручка'
+my_pen.draw()
+
+my_pensil = Pensil()
+my_pensil.title = "карандаш"
+my_pensil.draw()

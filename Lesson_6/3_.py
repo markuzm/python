@@ -7,18 +7,28 @@
  передать данные, проверить значения атрибутов, вызвать методы экземпляров).
 """
 
+
 class Worker:
     name = ''
     surname = ''
     position = ''
-    __income = {"wage": wage, "bonus": bonus}
+    _income = {"wage": wage, "bonus": bonus}
 
-
-
-class Position (Worker):
+class Position(Worker):
 
     def get_full_name(self):
-       return
+        print(f'Имя сотрудника: {self.name} {self.surname}')
 
     def get_total_income(self):
-        return
+        print(f'Суммарный доход: {self._income}')
+
+
+worker1 = Position()
+worker1.name = 'Леонид'
+worker1.surname = 'Великолепный'
+worker1._income[wage] = 50000
+worker1._income[bonus] = 5000
+worker1.get_full_name()
+worker1.get_total_income()
+
+

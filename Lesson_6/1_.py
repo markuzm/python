@@ -11,15 +11,18 @@
 import time
 
 class TrafficLight:
-    __color = 'красный'
+    __color = ['красный', 'желтый', "зеленый"]
 
-    def running(self, user_count):
+    def running(self):
+        user_count = 2
         count = 0
+        time_sleep = [3, 1, 2]
         while count < user_count:
             count += 1
-            time.sleep(3)
-            return print('hjh')
+            for i in range(len(self.__color)):
+                time.sleep(time_sleep[i])
+                print(self.__color[i])
 
-a = TrafficLight
-print(a)
-print(a.running(0, 2))
+my_traffic_ligth = TrafficLight
+print(my_traffic_ligth)
+my_traffic_ligth.running()

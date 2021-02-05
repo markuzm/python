@@ -14,15 +14,14 @@ class TrafficLight:
     __color = ['красный', 'желтый', "зеленый"]
 
     def running(self):
-        user_count = 2
+        user_count = int(input('Введите кол-во циклов светофора: '))
         count = 0
-        time_sleep = [3, 1, 2]
+        time_sleep = [7, 2, 2]
         while count < user_count:
             count += 1
             for i in range(len(self.__color)):
                 time.sleep(time_sleep[i])
                 print(self.__color[i])
 
-my_traffic_ligth = TrafficLight
-print(my_traffic_ligth)
+my_traffic_ligth = TrafficLight()
 my_traffic_ligth.running()

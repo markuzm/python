@@ -46,8 +46,14 @@ class Cell:
     def __truediv__(self, other):
         return f"Результат целочисленного деления: {math.ceil(self.cell_count / other.cell_count)}"
 
-    def make_order(self, n, i=0):
-        print()
+    def make_order(self, n):
+        answer = ''
+        for i in range(self.cell_count):
+            for j in range(n):
+                answer += "*"
+            answer += r'\n'
+        answer = answer[:-2]
+        return answer
 
 
 my_cell_1 = Cell(10)
@@ -56,7 +62,7 @@ print(my_cell_1 + my_cell_2)
 print(my_cell_1-my_cell_2)
 print(my_cell_1*my_cell_2)
 print(my_cell_1/my_cell_2)
-my_cell_1.make_order(3)
+print(f'Результат функции make_order: {my_cell_1.make_order(3)}')
 
 """
 В классе необходимо реализовать метод make_order(), принимающий экземпляр класса и

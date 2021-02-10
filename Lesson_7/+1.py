@@ -7,50 +7,41 @@
 первой матрицы складываем с первым элементом первой строки второй матрицы и т.д. """
 
 
-class Iterator:
-    """ Объект-итератор """
-
-    def __init__(self, start_i=0, start_j=0):
-        self.i = start_i
-        self.j = start_j
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        self.i += 1
-        if self.i <= 2:
-            return self.i
-        else:
-            raise StopIteration
-
-
-
 class Matrix:
-    """Объект, поддерживающий интерфейс итерации (итерируемый объект) """
 
     def __init__(self, list_el):
         self.list_el = list_el
 
-    def __add__(self, other):
-        return 10
-        # return MyClass(self.width + other.width, self.height + other.height)
-
     def __str__(self):
+        answer = ''
         for i in range(len(self.list_el)):
+            answer += '\n'
             for j in range(len(self.list_el[i])):
+                answer = answer + str(self.list_el[i][j]) + " "
                 j += 1
-                return f' {self.list_el[i][j]}'
             i += 1
-            return '\n'
+        return answer
+
+    def __add__(self, other):
+        new_matrix = []
+        new_matrix_line = []
+        summa = 0
+        for i in range(len(self.list_el)):
+            for j in range(len(self.list_el[0])):
+                summa = other.list_el[i][j] + self.list_el[i][j]
+                new_matrix_line.append(summa)
+                if len(new_matrix_line) == len(self.list_el[0]):
+                    new_matrix.append(new_matrix_line)
+                    new_matrix_line = []
+        return Matrix(new_matrix)
 
 
 my_list_1 = Matrix([[1, 2, 3], [3, 4, 5]])
 print(f'init: {my_list_1.list_el}')
-print(f'str: {my_list_1}')
+print(f'str: {my_list_1.__str__()}')
 
 my_list_2 = Matrix([[6, 7, 8], [9, 10, 11]])
 print(f'init: {my_list_2.list_el}')
-print(f'str: {my_list_2}')
+print(f'str: {my_list_2.__str__()}')
 
 print(my_list_1 + my_list_2)

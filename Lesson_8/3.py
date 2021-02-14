@@ -9,3 +9,26 @@
 реализовать проверку типа элемента и вносить его в список, только если введено число. Класс-исключение должен не
 позволить пользователю ввести текст (не число) и отобразить соответствующее сообщение. При этом работа скрипта не
 должна завершаться. """
+
+
+class IntError(Exception):
+    def __init__(self, txt):
+        self.txt = txt
+
+
+user_input = input(f"Введите элемент списка: ")
+my_list = []
+while True:
+    if user_input != "stop":
+        try:
+            if not isinstance(user_input, int):
+                raise IntError("Вы ввели данные не в виде числа")
+        except IntError:
+            print(IntError)
+            break
+        else:
+            my_list.append(user_input)
+            user_input = input(f"Введите элемент списка: ")
+    else:
+        break
+print(my_list)

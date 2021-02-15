@@ -1,24 +1,16 @@
-# class Date(object):
-#
-#     def __init__(self, day=0, month=0, year=0):
-#         self.day = day
-#         self.month = month
-#         self.year = year
-#
-#     @classmethod
-#     def from_string(cls, date_as_string):
-#         day, month, year = map(int, date_as_string.split('-'))
-#         date = cls(day, month, year)
-#         return date
-#
-#     @staticmethod
-#     def is_date_valid(date_as_string):
-#         day, month, year = map(int, date_as_string.split('-'))
-#         return day <= 31 and month <= 12 and year <= 3999
-#
-# date2 = Date.from_string('11-09-2012')
-# is_date = Date.is_date_valid('11-09-2012')
-# print(is_date)
-# print(date2)
+class NotNumber(ValueError):
+    pass
 
-print(type(5))
+
+my_list = []
+while True:
+    try:
+        value = input('Введите число в список:')
+        if value == 'q':
+            break
+        if not value.isdigit():
+            raise NotNumber(value)
+        my_list.append(int(value))
+    except NotNumber as ex:
+        print('Не число!', ex)
+print(my_list)

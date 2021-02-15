@@ -16,19 +16,15 @@ class IntError(Exception):
         self.txt = txt
 
 
-user_input = input(f"Введите элемент списка: ")
 my_list = []
 while True:
-    if user_input != "stop":
-        try:
-            if not isinstance(user_input, int):
-                raise IntError("Вы ввели данные не в виде числа")
-        except IntError:
-            print(IntError)
+    try:
+        user_input = input(f"Введите элемент списка: ")
+        if user_input == "stop":
             break
-        else:
-            my_list.append(user_input)
-            user_input = input(f"Введите элемент списка: ")
-    else:
-        break
+        if not user_input.isdigit():
+            raise IntError("Вы ввели данные не в виде числа")
+        my_list.append(user_input)
+    except IntError as err:
+        print(err)
 print(my_list)
